@@ -1,0 +1,62 @@
+.movieCard {
+  padding: 5px;
+  h2 {
+    text-align: center;
+    padding: 10px;
+    @media (min-width: 640px) and (orientation: landscape) {
+      font-size: 1.5rem;
+    }
+  }
+  &--poster {
+    text-align: center;
+    @media (min-width: 410px) {
+      margin-bottom: 15px;
+    }
+    img {
+      height: 200px;
+      @media (min-width: 768px) {
+        height: 280px;
+      }
+      @media (min-width: 1000px) {
+        height: 340px;
+      }
+      @media (min-width: 560px) and (orientation: landscape) {
+        height: 250px;
+      }
+    }
+  }
+  p {
+    padding: 1px;
+    font-size: 0.7rem;
+    @media (min-width: 410px) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 1000px) {
+      font-size: 1rem;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  &--addButton {
+    text-align: center;
+    button {
+      @include button;
+      @media (min-width: 360px) {
+        margin-top: 10px;
+      }
+      @media (min-width: 360px) {
+        margin-top: 15px;
+        height: 35px;
+        font-size: 1.1rem;
+      }
+      @media (min-width: 1000px) {
+        margin-top: 25px;
+      }
+      @media (min-width: 560px) and (orientation: landscape) {
+        height: 35px;
+        font-size: 1rem;
+      }
+    }
+  }
+}

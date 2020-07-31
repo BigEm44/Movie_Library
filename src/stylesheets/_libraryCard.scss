@@ -1,0 +1,83 @@
+.libraryCard {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-bottom: 1px solid $black;
+  @media (min-width: 1000px) {
+    width: 1200px;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 150px;
+  }
+  &__poster {
+    width: 30vw;
+    @media (min-width: 1000px) {
+      width: 20vw;
+    }
+    img {
+      height: 100px;
+      @media (min-width: 410px) {
+        height: 120px;
+      }
+      @media (min-width: 1000px) {
+        width: 81px;
+      }
+    }
+  }
+  &__details {
+    width: 60vw;
+    line-height: 1rem;
+    h2 {
+      @media (min-width: 410px) {
+        font-size: 1.1rem;
+      }
+      @media (min-width: 1000px) {
+        width: 25vw;
+        margin-bottom: 5px;
+      }
+    }
+    p {
+      @media (min-width: 410px) {
+        font-size: 0.8rem;
+      }
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  &__plot {
+    padding-top: 5px;
+    p {
+      @media (min-width: 410px) {
+        font-size: 0.8rem;
+      }
+      @media (min-width: 1000px) {
+        width: 25vw;
+        padding-top: 0;
+      }
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px;
+    width: 100vw;
+    @media (min-width: 1000px) {
+      width: 25vw;
+    }
+    button {
+      @include button;
+      width: 80px;
+      height: 27px;
+      font-size: 0.7rem;
+      @media (min-width: 410px) {
+        height: 30px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

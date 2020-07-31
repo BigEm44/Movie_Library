@@ -1,0 +1,21 @@
+@import './app.scss';
+@import './utilities';
+@import './navbar';
+@import './searchbar.scss';
+@import './addMovie.scss';
+@import './dashboard.scss';
+@import './movieCard.scss';
+@import './library';
+@import './libraryCard';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+  font-family: arial, sans-serif;
+  background-color: $white;
+}

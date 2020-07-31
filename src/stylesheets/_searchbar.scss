@@ -1,0 +1,55 @@
+.dashboard {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    @media (min-width: 410px) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: 560px) and (orientation: landscape) {
+      font-size: 1.4rem;
+    }
+  }
+  &__inputForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    form {
+      display: flex;
+      justify-content: center;
+      width: 100vw;
+      input {
+        @include input;
+        margin-right: 5px;
+        @media (min-width: 360px) {
+          font-size: 1rem;
+        }
+        @media (min-width: 410px) {
+          height: 35px;
+          font-size: 1.2rem;
+        }
+        @media (min-width: 560px) and (orientation: landscape) {
+          height: 30px;
+          font-size: 1rem;
+        }
+      }
+      button {
+        @include button;
+        @media (min-width: 360px) {
+          font-size: 1rem;
+        }
+        @media (min-width: 410px) {
+          height: 35px;
+          font-size: 1.2rem;
+        }
+        @media (min-width: 560px) and (orientation: landscape) {
+          height: 30px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

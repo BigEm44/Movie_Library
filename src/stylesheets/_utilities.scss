@@ -1,0 +1,30 @@
+$white: #f0eee1;
+$orange: #f0582b;
+$black: #231f20;
+$blue: #2b337b;
+$yellow: #ffc228;
+
+@mixin button {
+  padding: 5px;
+  height: 30px;
+  font-size: 0.9rem;
+  color: $black;
+  border-radius: 5px;
+  border-color: $blue;
+  cursor: pointer;
+  &:hover {
+    background-color: $blue;
+    color: white;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+}
+
+@mixin input {
+  padding: 5px;
+  height: 30px;
+  font-size: 0.9rem;
+  color: $black;
+  border-radius: 5px;
+  border-color: $blue;
+}
