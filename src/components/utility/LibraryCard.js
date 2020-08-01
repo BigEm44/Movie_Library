@@ -32,21 +32,26 @@ class LibraryCard extends Component {
           <div className="libraryCard__details">
             <h2>{library.Title}</h2>
             <p>
-              <span>Year:</span> {library.Year}
+              <span>Year:</span>
+              {library.Year}
             </p>
             <p>
-              <span>Director:</span> {library.Director}
+              <span>Director:</span>
+              {library.Director}
             </p>
             <p>
-              <span>Runtime:</span> {library.Runtime}
+              <span>Runtime:</span>
+              {library.Runtime}
             </p>
             <p>
-              <span>Actors:</span> {library.Actors}
+              <span>Actors:</span>
+              {library.Actors}
             </p>
           </div>
           <div className="libraryCard__plot">
             <p>
-              <span>Plot:</span> {library.Plot}
+              <span>Plot:</span>
+              {library.Plot}
             </p>
           </div>
           <div className="libraryCard__buttons">

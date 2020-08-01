@@ -13,7 +13,7 @@
   &__poster {
     width: 30vw;
     @media (min-width: 1000px) {
-      width: 120px;
+      width: 100px;
     }
     img {
       height: 100px;
@@ -28,10 +28,12 @@
   &__details {
     width: 60vw;
     line-height: 1rem;
+    word-wrap: break-word;
     @media (min-width: 1000px) {
       width: 300px;
     }
     h2 {
+      word-wrap: break-word;
       color: $orange;
       @media (min-width: 410px) {
         font-size: 1.1rem;
@@ -41,6 +43,7 @@
       }
     }
     p {
+      word-wrap: break-word;
       @media (min-width: 410px) {
         font-size: 0.8rem;
       }
@@ -52,6 +55,7 @@
   &__plot {
     padding-top: 5px;
     p {
+      word-wrap: break-word;
       @media (min-width: 410px) {
         font-size: 0.8rem;
       }
@@ -70,7 +74,7 @@
     margin: 5px;
     width: 100vw;
     @media (min-width: 1000px) {
-      width: 300px;
+      width: 250px;
     }
     button {
       @include button;

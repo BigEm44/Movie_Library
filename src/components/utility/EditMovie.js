@@ -7,6 +7,7 @@ class EditMovie extends Component {
     super(props);
     const { library, keyId } = this.props;
     this.state = {
+      Poster: library[keyId].Poster,
       Title: library[keyId].Title,
       Year: library[keyId].Year,
       Director: library[keyId].Director,
@@ -51,6 +52,7 @@ class EditMovie extends Component {
             name="Title"
             value={Title}
             onChange={this.handleChangeTextArea}
+            maxLength="30"
           />
           <label htmlFor="year">Edit year</label>
           <textarea
@@ -58,6 +60,7 @@ class EditMovie extends Component {
             name="Year"
             value={Year}
             onChange={this.handleChangeTextArea}
+            pattern="[0-9]{4}"
           />
           <label htmlFor="director">Edit director</label>
           <textarea
@@ -65,6 +68,7 @@ class EditMovie extends Component {
             name="Director"
             value={Director}
             onChange={this.handleChangeTextArea}
+            maxLength="20"
           />
           <label htmlFor="runtime">Edit runtime</label>
           <textarea
@@ -72,6 +76,7 @@ class EditMovie extends Component {
             name="Runtime"
             value={Runtime}
             onChange={this.handleChangeTextArea}
+            maxLength="8"
           />
 
           <label htmlFor="actors">Edit actors</label>
@@ -80,6 +85,7 @@ class EditMovie extends Component {
             name="Actors"
             value={Actors}
             onChange={this.handleChangeTextArea}
+            maxLength="60"
           />
           <label htmlFor="plot">Edit plot</label>
           <textarea

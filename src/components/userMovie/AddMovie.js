@@ -46,6 +46,7 @@ class AddMovie extends Component {
               value={Title}
               onChange={this.handleChange}
               required
+              maxLength="30"
             />
           </label>
           <label>
@@ -56,6 +57,7 @@ class AddMovie extends Component {
               value={Year}
               onChange={this.handleChange}
               required
+              pattern="[0-9]{4}"
             />
           </label>
           <label>
@@ -66,6 +68,7 @@ class AddMovie extends Component {
               value={Director}
               onChange={this.handleChange}
               required
+              maxLength="20"
             />
           </label>
           <label>
@@ -76,17 +79,17 @@ class AddMovie extends Component {
               value={Plot}
               onChange={this.handleChange}
               required
+              maxLength="250"
             />
           </label>
-          <label>
-            <p>Runtime</p>
-            <input
-              type="text"
-              name="Runtime"
-              value={Runtime}
-              onChange={this.handleChange}
-            />
-          </label>
+          <p>Runtime</p>
+          <input
+            type="text"
+            name="Runtime"
+            value={Runtime}
+            onChange={this.handleChange}
+            maxLength="8"
+          />
           <label>
             <p>Actors</p>
             <input
@@ -94,6 +97,7 @@ class AddMovie extends Component {
               name="Actors"
               value={Actors}
               onChange={this.handleChange}
+              maxLength="60"
             />
           </label>
           <label className="addMovie--button">
