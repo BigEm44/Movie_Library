@@ -7,7 +7,7 @@ const Navbar = () => {
       <h2>Movie Library</h2>
       <div className="header__buttons">
         <Link className="header__buttons__button" to="/">
-          Home
+          Search Movie
         </Link>
         <Link className="header__buttons__button" to="/addMovie">
           Add Movie
