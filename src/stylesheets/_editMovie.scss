@@ -1,0 +1,59 @@
+.editMovie {
+  h2 {
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: $orange;
+  }
+  &__textInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    textarea {
+      padding: 3px;
+      height: 40px;
+      width: 270px;
+      font-size: 0.8rem;
+      color: $black;
+      border: 1px solid $blue;
+      border-radius: 5px;
+      @media (min-width: 360px) {
+        width: 310px;
+      }
+      @media (min-width: 410px) {
+        width: 360px;
+      }
+      @media (min-width: 600px) {
+        width: 500px;
+      }
+      @media (min-width: 768px) {
+        width: 600px;
+      }
+      @media (min-width: 560px) and (orientation: landscape) {
+        width: 540px;
+      }
+      @media (min-width: 730px) and (orientation: landscape) {
+        width: 650px;
+      }
+    }
+    textarea:nth-of-type(6) {
+      height: 80px;
+    }
+    label {
+      font-size: 0.9rem;
+      padding: 5px;
+      color: $blue;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    button {
+      @include button;
+      margin: 10px;
+      width: 90px;
+    }
+  }
+}

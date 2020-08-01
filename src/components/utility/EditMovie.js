@@ -19,161 +19,82 @@ class EditMovie extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state);
   };
 
   handleSubmitTextArea = (e) => {
+    const { addMovie, deleteMovie, keyId, edit } = this.props;
     e.preventDefault();
-    this.props.addMovie(this.state);
-    this.props.deleteMovie(this.props.keyId);
+    addMovie(this.state);
+    deleteMovie(keyId);
+  };
+
+  handleCloseEdit = () => {
+    const { edit } = this.props;
+
+    console.log(edit);
   };
 
   render() {
-    // console.log(this.props.library);
-    // console.log(this.props.keyId);
-    const { library, keyId } = this.props;
+    const { edit } = this.props;
     const { Title, Year, Director, Runtime, Actors, Plot } = this.state;
-    return (
+
+    return edit ? (
       <div className="editMovie">
         <h2>EditMovie</h2>
-        <div className="editMovie__textIputs">
-          <div className="textInputs--title">
-            <form onSubmit={this.handleSubmitTextArea}>
-              <label htmlFor="title">Edit title</label>
-              <textarea
-                id="Title"
-                name="Title"
-                value={Title}
-                onChange={this.handleChangeTextArea}
-                row="20"
-                cols="40"
-              />
-              <label htmlFor="year">Edit year</label>
-              <textarea
-                id="Year"
-                name="Year"
-                value={Year}
-                onChange={this.handleChangeTextArea}
-                row="2"
-                cols="20"
-              />
-              <label htmlFor="director">Edit director</label>
-              <textarea
-                id="Director"
-                name="Director"
-                value={Director}
-                onChange={this.handleChangeTextArea}
-                row="2"
-                cols="20"
-              />
-              <label htmlFor="runtime">Edit runtime</label>
-              <textarea
-                id="Runtime"
-                name="Runtime"
-                value={Runtime}
-                onChange={this.handleChangeTextArea}
-                row="2"
-                cols="20"
-              />
+        <form
+          className="editMovie__textInputs"
+          onSubmit={this.handleSubmitTextArea}
+        >
+          <label htmlFor="title">Edit title</label>
+          <textarea
+            id="Title"
+            name="Title"
+            value={Title}
+            onChange={this.handleChangeTextArea}
+          />
+          <label htmlFor="year">Edit year</label>
+          <textarea
+            id="Year"
+            name="Year"
+            value={Year}
+            onChange={this.handleChangeTextArea}
+          />
+          <label htmlFor="director">Edit director</label>
+          <textarea
+            id="Director"
+            name="Director"
+            value={Director}
+            onChange={this.handleChangeTextArea}
+          />
+          <label htmlFor="runtime">Edit runtime</label>
+          <textarea
+            id="Runtime"
+            name="Runtime"
+            value={Runtime}
+            onChange={this.handleChangeTextArea}
+          />
 
-              <label htmlFor="actors">Edit actors</label>
-              <textarea
-                id="Actors"
-                name="Actors"
-                value={Actors}
-                onChange={this.handleChangeTextArea}
-                row="2"
-                cols="20"
-              />
-              <label htmlFor="plot">Edit plot</label>
-              <textarea
-                id="Plot"
-                name="Plot"
-                value={Plot}
-                onChange={this.handleChangeTextArea}
-                row="2"
-                cols="20"
-              />
-              <label>
-                <button type="submit">Submit</button>
-              </label>
-            </form>
-
-            {/* {library[keyId].Title} */}
-            {/* </textarea> */}
+          <label htmlFor="actors">Edit actors</label>
+          <textarea
+            id="Actors"
+            name="Actors"
+            value={Actors}
+            onChange={this.handleChangeTextArea}
+          />
+          <label htmlFor="plot">Edit plot</label>
+          <textarea
+            id="Plot"
+            name="Plot"
+            value={Plot}
+            onChange={this.handleChangeTextArea}
+          />
+          <div className="editMovie__buttons">
+            <button type="submit">Submit</button>
+            <button onClick={this.handleCloseEdit}>Close</button>
           </div>
-          {/* <div className="textInputs--year">
-            <label htmlFor="year">Edit year</label>
-            <textarea
-              id="year"
-              name="year"
-              //value={Year}
-              defaulValue={library[keyId].Title}
-              onChange={this.handleChange}
-              row="2"
-              cols="20"
-            >
-              {library[keyId].Year}
-            </textarea>
-          </div>
-          <div className="textInputs--director">
-            <label htmlFor="director">Edit director</label>
-            <textarea
-              id="director"
-              name="director"
-              //value={Director}
-              onChange={this.handleChange}
-              row="2"
-              cols="20"
-            >
-              {library[keyId].Director}
-            </textarea>
-          </div>
-          <div className="textInputs--runtime">
-            <label htmlFor="runtime">Edit runtime</label>
-            <textarea
-              id="runtime"
-              name="runtime"
-              //value={Runtime}
-              onChange={this.handleChange}
-              row="2"
-              cols="20"
-            >
-              {library[keyId].Runtime}
-            </textarea>
-          </div>
-          <div className="textInputs--actors">
-            <label htmlFor="actors">Edit actors</label>
-            <textarea
-              id="actors"
-              name="actors"
-              //value={Actors}
-              onChange={this.handleChange}
-              row="2"
-              cols="20"
-            >
-              {library[keyId].Actors}
-            </textarea>
-          </div>
-          <div className="textInputs--plot">
-            <label htmlFor="plot">Edit plot</label>
-            <textarea
-              id="plot"
-              name="plot"
-              // value={Plot}
-              // onChange={this.handleChange}
-              row="2"
-              cols="20"
-            >
-              {library[keyId].Plot}
-            </textarea>
-          </div> */}
-          {/* <div className="textInputs--button">
-            <button onClick={this.handleSubmitTextArea}>Submit</button>
-          </div> */}
-        </div>
+        </form>
       </div>
-    );
+    ) : null;
   }
 }
 

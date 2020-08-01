@@ -3,7 +3,7 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 10px;
-  border-bottom: 1px solid $black;
+  border-top: 1px solid $blue;
   @media (min-width: 1000px) {
     width: 1200px;
     flex-wrap: nowrap;
@@ -29,6 +29,7 @@
     width: 60vw;
     line-height: 1rem;
     h2 {
+      color: $orange;
       @media (min-width: 410px) {
         font-size: 1.1rem;
       }
