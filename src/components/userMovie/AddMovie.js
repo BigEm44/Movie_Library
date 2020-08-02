@@ -1,39 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { userMovie, addMovie } from '../../store/actions/libraryActions';
+import { addMovie } from '../../store/actions/libraryActions';
+import { addForm } from '../../store/actions/formActions';
 
 class AddMovie extends Component {
-  state = {
-    Title: '',
-    Year: '',
-    Director: '',
-    Runtime: '',
-    Actors: '',
-    Plot: '',
-  };
   handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+    const { addForm } = this.props;
+    const { name, value } = e.target;
+    const newValues = { [name]: value };
+    addForm(newValues);
   };
 
   handleSubmitForm = (e) => {
-    const { addMovie } = this.props;
     e.preventDefault();
-    addMovie(this.state);
-    this.setState({
-      Title: '',
-      Year: '',
-      Director: '',
-      Runtime: '',
-      Actors: '',
-      Plot: '',
-    });
+    const { addMovie, form } = this.props;
+    addMovie(form);
   };
 
   render() {
-    const { Title, Year, Director, Runtime, Actors, Plot } = this.state;
-
+    const { Title, Year, Director, Runtime, Actors, Plot } = this.props;
     return (
       <div className="addMovie">
         <h2>Add your movie</h2>
@@ -110,7 +95,7 @@ class AddMovie extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  userMovie: state.library.userMovie,
+  form: state.form,
 });
 
-export default connect(mapStateToProps, { addMovie })(AddMovie);
+export default connect(mapStateToProps, { addMovie, addForm })(AddMovie);

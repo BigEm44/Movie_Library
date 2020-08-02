@@ -20,7 +20,6 @@ class Searchbar extends Component {
     searchMovie('');
   };
   render() {
-    const { text } = this.props;
     return (
       <div className="dashboard">
         <h2>Find movie</h2>
