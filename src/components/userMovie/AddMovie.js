@@ -13,8 +13,18 @@ class AddMovie extends Component {
 
   handleSubmitForm = (e) => {
     e.preventDefault();
-    const { addMovie, form } = this.props;
+    const { addMovie, addForm } = this.props;
+    let { form } = this.props;
     addMovie(form);
+    form = {
+      Title: '',
+      Year: '',
+      Director: '',
+      Runtime: '',
+      Actors: '',
+      Plot: '',
+    };
+    addForm(form);
     alert('Your movie is added to the library.');
   };
 
