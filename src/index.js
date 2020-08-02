@@ -11,7 +11,6 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { saveState, loadState } from './store/localStorage/localStorage';
 
 const middleware = [thunk];
-//const initialState = {};
 const store = createStore(
   rootReducer,
   loadState(),

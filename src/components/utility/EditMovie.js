@@ -23,16 +23,16 @@ class EditMovie extends Component {
   };
 
   handleSubmitTextArea = (e) => {
-    const { addMovie, deleteMovie, keyId, edit } = this.props;
+    const { addMovie, deleteMovie, keyId, handleCloseEdit } = this.props;
     e.preventDefault();
     addMovie(this.state);
     deleteMovie(keyId);
+    handleCloseEdit();
   };
 
   handleCloseEdit = () => {
-    const { edit } = this.props;
-
-    console.log(edit);
+    const { handleCloseEdit } = this.props;
+    handleCloseEdit();
   };
 
   render() {

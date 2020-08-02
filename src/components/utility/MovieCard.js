@@ -6,6 +6,7 @@ class MovieCard extends Component {
   handleSubmit = () => {
     const { movies } = this.props;
     this.props.addMovie(movies);
+    alert('Movie is added to the library');
   };
   render() {
     const { movies } = this.props;
@@ -40,6 +41,5 @@ class MovieCard extends Component {
 
 const mapStateToProps = (state) => ({
   movies: state.movies.movies,
-  library: state.library.library,
 });
 export default connect(mapStateToProps, { addMovie })(MovieCard);

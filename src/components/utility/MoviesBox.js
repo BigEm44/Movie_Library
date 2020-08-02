@@ -6,7 +6,7 @@ class MoviesBox extends Component {
   render() {
     const { movies } = this.props;
     let content = '';
-    content = movies.Response == 'True' ? <MovieCard /> : null;
+    content = movies.Response === 'True' ? <MovieCard /> : null;
     return <div className="movieBox">{content}</div>;
   }
 }

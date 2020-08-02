@@ -1,7 +1,6 @@
 import { ADD_USERMOVIE } from '../actions/types';
 
 const initState = {
-  Poster: '',
   Title: '',
   Year: '',
   Director: '',

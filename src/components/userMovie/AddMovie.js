@@ -15,6 +15,7 @@ class AddMovie extends Component {
     e.preventDefault();
     const { addMovie, form } = this.props;
     addMovie(form);
+    alert('Your movie is added to the library.');
   };
 
   render() {

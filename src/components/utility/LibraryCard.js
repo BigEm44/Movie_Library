@@ -14,6 +14,12 @@ class LibraryCard extends Component {
     });
   };
 
+  handleCloseEdit = () => {
+    this.setState({
+      edit: false,
+    });
+  };
+
   handleDelete = () => {
     const { deleteMovie, keyId } = this.props;
     deleteMovie(keyId);
@@ -22,7 +28,7 @@ class LibraryCard extends Component {
   render() {
     const { library, keyId } = this.props;
     const { edit } = this.state;
-    console.log(edit);
+
     return (
       <>
         <div className="libraryCard">
@@ -61,7 +67,13 @@ class LibraryCard extends Component {
           </div>
         </div>
         <div className="editSection">
-          {edit ? <EditMovie keyId={keyId} edit={edit} /> : null}
+          {edit ? (
+            <EditMovie
+              keyId={keyId}
+              edit={edit}
+              handleCloseEdit={this.handleCloseEdit}
+            />
+          ) : null}
         </div>
       </>
     );

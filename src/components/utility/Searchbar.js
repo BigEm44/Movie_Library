@@ -13,9 +13,9 @@ class Searchbar extends Component {
   };
 
   handleSubmit = (e) => {
-    const { fetchMovies, setLoading, searchMovie } = this.props;
+    const { text, fetchMovies, setLoading, searchMovie } = this.props;
     e.preventDefault();
-    fetchMovies(this.props.text);
+    fetchMovies(text);
     setLoading();
     searchMovie('');
   };
